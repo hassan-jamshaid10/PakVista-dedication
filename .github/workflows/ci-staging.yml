@@ -15,6 +15,7 @@ jobs:
       - name: Lint and Build
         run: |
           npm init -y
+          npm pkg delete main
           npm install htmlhint stylelint stylelint-config-standard parcel --save-dev
           echo '{ "extends": "stylelint-config-standard", "rules": { "selector-class-pattern": null, "property-no-vendor-prefix": null, "value-no-vendor-prefix": null } }' > .stylelintrc.json
           npx htmlhint "**/*.html"
