@@ -1,10 +1,10 @@
 :root {
   --primary-color: #2ECC40;
   --secondary-color: #3BADB0;
-  --text-color: #333333;
+  --text-color: #333;
   --bg-color: #f9f9f9;
   --nav-bg: #1a1a1a;
-  --nav-text: #ffffff;
+  --nav-text: #fff;
 }
 
 body {
@@ -54,13 +54,13 @@ h3 {
 
 .hero {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   padding: 4rem 2rem;
 }
 
 .hero h1 {
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 1rem;
 }
 
@@ -68,13 +68,13 @@ h3 {
   width: 100%;
   max-width: 400px;
   height: 250px;
-  background-color: #dddddd;
-  border: 2px dashed #999999;
+  background-color: #ddd;
+  border: 2px dashed #999;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 1rem 0;
-  color: #666666;
+  color: #666;
   font-style: italic;
 }
 
