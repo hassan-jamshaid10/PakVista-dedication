@@ -3,13 +3,13 @@
   --primary-color: #2ecc40;
   --secondary-color: #3badb0;
   --accent-color: #14532d;
-  --text-color: #333333;
+  --text-color: #333;
   --bg-color: #f9f9f9;
-  --surface-color: #ffffff;
+  --surface-color: #fff;
   --nav-bg: #1a1a1a;
-  --nav-text: #ffffff;
+  --nav-text: #fff;
   --border-color: #d9d9d9;
-  --muted-text: #666666;
+  --muted-text: #666;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
@@ -91,13 +91,13 @@ a:hover {
 ========================= */
 header {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: #ffffff;
+  color: #fff;
   padding: 3rem 0 2rem;
   box-shadow: var(--shadow);
 }
 
 header h1 {
-  color: #ffffff;
+  color: #fff;
 }
 
 header p {
@@ -112,7 +112,7 @@ header p {
 }
 
 .hero h1 {
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 1rem;
 }
 
@@ -198,8 +198,8 @@ figure {
   width: 100%;
   max-width: 450px;
   height: 250px;
-  background-color: #dddddd;
-  border: 2px dashed #999999;
+  background-color: #ddd;
+  border: 2px dashed #999;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -240,7 +240,7 @@ td {
 
 th {
   background-color: var(--secondary-color);
-  color: #ffffff;
+  color: #fff;
 }
 
 tr:nth-child(even) {
