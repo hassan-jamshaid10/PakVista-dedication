@@ -1,24 +1,134 @@
+
 :root {
-  --primary-color: #2ECC40;
-  --secondary-color: #3BADB0;
-  --text-color: #333;
+  --primary-color: #2ecc40;
+  --secondary-color: #3badb0;
+  --accent-color: #14532d;
+  --text-color: #333333;
   --bg-color: #f9f9f9;
+  --surface-color: #ffffff;
   --nav-bg: #1a1a1a;
-  --nav-text: #fff;
+  --nav-text: #ffffff;
+  --border-color: #d9d9d9;
+  --muted-text: #666666;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   Base / Reset
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
   color: var(--text-color);
   background-color: var(--bg-color);
 }
 
+/* =========================
+   Layout Helpers
+========================= */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* =========================
+   Typography
+========================= */
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.3;
+  color: var(--secondary-color);
+}
+
+h1 {
+  font-size: 2.3rem;
+  margin-bottom: 0.75rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-left: 5px solid var(--primary-color);
+  padding-left: 0.75rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: var(--accent-color);
+}
+
+p {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+/* =========================
+   Header / Hero
+========================= */
+header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: #ffffff;
+  padding: 3rem 0 2rem;
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  color: #ffffff;
+}
+
+header p {
+  color: #f5f5f5;
+  max-width: 850px;
+  margin-bottom: 1.5rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.hero h1 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* =========================
+   Navigation
+========================= */
 .nav-bar {
   background-color: var(--nav-bg);
-  padding: 1rem;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  margin-top: 1.5rem;
 }
 
 .nav-bar ul {
@@ -27,63 +137,199 @@ body {
   padding: 0;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+}
+
+.nav-bar li {
+  margin: 0;
+  padding: 0;
 }
 
 .nav-bar a {
   color: var(--nav-text);
-  text-decoration: none;
   font-weight: bold;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  display: inline-block;
 }
 
-.nav-bar a:hover {
+.nav-bar a:hover,
+.nav-bar a:focus {
+  background-color: rgba(255, 255, 255, 0.12);
   color: var(--primary-color);
 }
 
-h1,
-h2,
-h3 {
-  color: var(--secondary-color);
+/* =========================
+   Main Content
+========================= */
+main {
+  padding: 2rem 0 3rem;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+section {
+  background-color: var(--surface-color);
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
 }
 
-.hero {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: #fff;
-  text-align: center;
-  padding: 4rem 2rem;
+article {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
 }
 
-.hero h1 {
-  color: #fff;
-  margin-bottom: 1rem;
+article:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* =========================
+   Figures / Image Placeholders
+========================= */
+figure {
+  margin: 1.5rem 0;
 }
 
 .img-placeholder {
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   height: 250px;
-  background-color: #ddd;
-  border: 2px dashed #999;
+  background-color: #dddddd;
+  border: 2px dashed #999999;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem 0;
-  color: #666;
+  padding: 1rem;
+  color: var(--muted-text);
   font-style: italic;
+  text-align: center;
+  margin: 0 auto;
 }
 
+figcaption {
+  margin-top: 0.75rem;
+  text-align: center;
+  color: var(--muted-text);
+  font-size: 0.95rem;
+}
+
+/* =========================
+   Tables
+========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: var(--surface-color);
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+th,
+td {
+  border: 1px solid var(--border-color);
+  padding: 0.9rem 1rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+}
+
+tr:nth-child(even) {
+  background-color: #f4fbfb;
+}
+
+/* =========================
+   Lists
+========================= */
+ul,
+ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   Footer
+========================= */
 footer {
   background-color: var(--nav-bg);
   color: var(--nav-text);
   text-align: center;
-  padding: 1rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  padding: 1.2rem;
+  margin-top: 2rem;
 }
+
+footer p {
+  margin: 0;
+  color: var(--nav-text);
+}
+
+/* =========================
+   Utility classes
+========================= */
+.text-center {
+  text-align: center;
+}
+
+.highlight {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  header {
+    padding: 2rem 0 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  .nav-bar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  section {
+    padding: 1.25rem;
+  }
+
+  .img-placeholder {
+    height: 220px;
+  }
+
+  th,
+  td {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+}
+```
