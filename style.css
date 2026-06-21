@@ -9,7 +9,7 @@
   --nav-text: #fff;
   --border-color: #d9d9d9;
   --muted-text: #666;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow: 0 4px 12px rgb(0 0 0 / 8%);
 }
 
 /* =========================
@@ -71,7 +71,7 @@ h3 {
 }
 
 p {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
   font-size: 1rem;
 }
 
@@ -83,6 +83,35 @@ a {
 
 a:hover {
   color: var(--primary-color);
+}
+
+/* =========================
+   Lists
+========================= */
+ul,
+ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  text-align: center;
+  padding: 1.2rem;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0;
+  color: var(--nav-text);
 }
 
 /* =========================
@@ -155,7 +184,7 @@ header p {
 
 .nav-bar a:hover,
 .nav-bar a:focus {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgb(255 255 255 / 12%);
   color: var(--primary-color);
 }
 
@@ -247,35 +276,6 @@ tr:nth-child(even) {
 }
 
 /* =========================
-   Lists
-========================= */
-ul,
-ol {
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-
-/* =========================
-   Footer
-========================= */
-footer {
-  background-color: var(--nav-bg);
-  color: var(--nav-text);
-  text-align: center;
-  padding: 1.2rem;
-  margin-top: 2rem;
-}
-
-footer p {
-  margin: 0;
-  color: var(--nav-text);
-}
-
-/* =========================
    Utility classes
 ========================= */
 .text-center {
@@ -290,7 +290,7 @@ footer p {
 /* =========================
    Responsive Design
 ========================= */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .container {
     padding: 1rem;
   }
