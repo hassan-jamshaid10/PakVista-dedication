@@ -1,16 +1,15 @@
-
 :root {
   --primary-color: #2ecc40;
   --secondary-color: #3badb0;
   --accent-color: #14532d;
-  --text-color: #333333;
+  --text-color: #333;
   --bg-color: #f9f9f9;
-  --surface-color: #ffffff;
+  --surface-color: #fff;
   --nav-bg: #1a1a1a;
-  --nav-text: #ffffff;
+  --nav-text: #fff;
   --border-color: #d9d9d9;
-  --muted-text: #666666;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --muted-text: #666;
+  --shadow: 0 4px 12px rgb(0 0 0 / 8%);
 }
 
 /* =========================
@@ -72,7 +71,7 @@ h3 {
 }
 
 p {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
   font-size: 1rem;
 }
 
@@ -87,17 +86,46 @@ a:hover {
 }
 
 /* =========================
+   Lists
+========================= */
+ul,
+ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  text-align: center;
+  padding: 1.2rem;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0;
+  color: var(--nav-text);
+}
+
+/* =========================
    Header / Hero
 ========================= */
 header {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: #ffffff;
+  color: #fff;
   padding: 3rem 0 2rem;
   box-shadow: var(--shadow);
 }
 
 header h1 {
-  color: #ffffff;
+  color: #fff;
 }
 
 header p {
@@ -112,7 +140,7 @@ header p {
 }
 
 .hero h1 {
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 1rem;
 }
 
@@ -156,7 +184,7 @@ header p {
 
 .nav-bar a:hover,
 .nav-bar a:focus {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgb(255 255 255 / 12%);
   color: var(--primary-color);
 }
 
@@ -198,8 +226,8 @@ figure {
   width: 100%;
   max-width: 450px;
   height: 250px;
-  background-color: #dddddd;
-  border: 2px dashed #999999;
+  background-color: #ddd;
+  border: 2px dashed #999;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -240,40 +268,11 @@ td {
 
 th {
   background-color: var(--secondary-color);
-  color: #ffffff;
+  color: #fff;
 }
 
 tr:nth-child(even) {
   background-color: #f4fbfb;
-}
-
-/* =========================
-   Lists
-========================= */
-ul,
-ol {
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-
-/* =========================
-   Footer
-========================= */
-footer {
-  background-color: var(--nav-bg);
-  color: var(--nav-text);
-  text-align: center;
-  padding: 1.2rem;
-  margin-top: 2rem;
-}
-
-footer p {
-  margin: 0;
-  color: var(--nav-text);
 }
 
 /* =========================
@@ -291,7 +290,7 @@ footer p {
 /* =========================
    Responsive Design
 ========================= */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .container {
     padding: 1rem;
   }
@@ -332,4 +331,3 @@ footer p {
     font-size: 0.95rem;
   }
 }
-```
