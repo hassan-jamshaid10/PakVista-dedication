@@ -1,0 +1,42 @@
+name: CI - Development
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Lint and Build
+        run: |
+          npm init -y
+          npm install htmlhint stylelint stylelint-config-standard parcel --save-dev
+          echo '{ "extends": "stylelint-config-standard", "rules": { "selector-class-pattern": null, "property-no-vendor-prefix": null, "value-no-vendor-prefix": null } }' > .stylelintrc.json
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
+          npx parcel build index.html --dist-dir dist
+
+      - name: Docker Login
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build Image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/pakvista:dev-latest, ${{ secrets.DOCKERHUB_USERNAME }}/pakvista:dev-${{ github.sha }}
+
+      - name: Push Image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/pakvista:dev-latest, ${{ secrets.DOCKERHUB_USERNAME }}/pakvista:dev-${{ github.sha }}
